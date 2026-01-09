@@ -188,7 +188,7 @@ Obtiene todos los carritos guardados, ordenados por fecha descendente.
 ]
 ```
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 ### Implementadas
 
