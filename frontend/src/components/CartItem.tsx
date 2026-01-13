@@ -1,4 +1,5 @@
 import type { CartItem as CartItemType } from "../types";
+import ButtonLess1 from "./ButtonLess1";
 
 type CartItemProps = {
   item: CartItemType;
@@ -27,12 +28,7 @@ export default function CartItem({
 
       <div className="cart-item-controls">
         <div className="quantity-controls">
-          <button
-            onClick={() => onDecrease(item.product.id)}
-            className="btn-quantity"
-          >
-            −
-          </button>
+          <ButtonLess1 item={item} onDecrease={onDecrease} />
           <span className="quantity-display">{item.quantity}</span>
           <button
             onClick={() => onIncrease(item.product.id)}

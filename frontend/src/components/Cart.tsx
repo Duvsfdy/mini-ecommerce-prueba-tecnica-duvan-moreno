@@ -7,6 +7,7 @@ type CartProps = {
   onRemove: (productId: number) => void;
   onIncrease: (productId: number) => void;
   onDecrease: (productId: number) => void;
+  onDecreaseAll: () => void;
   onSaveCart: () => void;
 };
 
@@ -16,6 +17,7 @@ export default function Cart({
   onRemove,
   onIncrease,
   onDecrease,
+  onDecreaseAll,
   onSaveCart,
 }: CartProps) {
   return (
@@ -48,6 +50,13 @@ export default function Cart({
             </div>
             <button onClick={onSaveCart} className="btn-checkout">
               Guardar Carrito
+            </button>
+            <button
+              onClick={onDecreaseAll}
+              className="btn-quantity"
+              style={{ marginTop: "10px", width: "100%" }}
+            >
+              − Restar 1 a todos los productos
             </button>
           </div>
         </>

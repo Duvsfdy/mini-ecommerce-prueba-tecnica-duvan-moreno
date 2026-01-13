@@ -82,6 +82,18 @@ function App() {
     }
   };
 
+  const decreaseAllProducts = () => {
+    // Reducir todos los productos en 1, eliminando los que tengan cantidad 1
+    setCart((prevCart) =>
+      prevCart
+        .map((item) => ({
+          ...item,
+          quantity: item.quantity - 1,
+        }))
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
     0
@@ -155,6 +167,7 @@ function App() {
             onRemove={removeFromCart}
             onIncrease={increaseQuantity}
             onDecrease={decreaseQuantity}
+            onDecreaseAll={decreaseAllProducts}
             onSaveCart={saveCart}
           />
         </div>
